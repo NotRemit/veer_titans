@@ -6,7 +6,7 @@ Welcome to the official website of the **VSSUT Chess Club**, Burla. This site re
 
 ## 🌐 Live Preview
 
-[Visit the Website](#) *(....)*
+[Visit the Website](https://veer-titans.vercel.app/)
 
 ---
 
