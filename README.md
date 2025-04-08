@@ -22,5 +22,3 @@ Welcome to the official website of the **VSSUT Chess Club**, Burla. This site re
 
 ---
 
-## 📁 Project Structure
-
