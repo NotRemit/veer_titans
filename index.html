@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>College Chess Club</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>♟ Veer Titans ♟</h1>
+  <p>Where strategy meets intellect</p>
+</header>
+
+<nav>
+    <div class="nav-container">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#events">Events</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  
+
+<section id="about" class="about-section">
+  <h2>About Us</h2>
+  <p>
+    We are the <strong>official Chess Club of VSSUT, Burla</strong>, where strategy meets passion and every move tells a story. Over the years, we've proudly brought home numerous victories and have made our mark in various inter-college and state-level tournaments.
+  </p>
+  <p>
+    Our club is powered by a team of <strong>dedicated minds</strong>, some of whom hold impressive <strong>FIDE ratings</strong> and have represented the university at prestigious platforms. Whether it's rapid, blitz, or classical — we don't just play, we compete with purpose.
+  </p>
+  <p>
+    We believe that chess is more than just a game — it's a battle of intellect, patience, and vision. Here, every pawn has potential, every player has promise, and every match is a step toward greatness.
+  </p>
+  <blockquote>“In life, as in chess, forethought wins.”</blockquote>
+  <p>
+    Whether you're a grandmaster in the making or just learning how to castle — there's a place for you on our board.
+  </p>
+  <p><strong>Join us, and make your next move the best one yet. ♟️</strong></p>
+</section>
+
+<section id="puzzle" class="puzzle-section">
+    <h2>♟️ Daily Puzzle</h2>
+    <iframe
+      src="https://lichess.org/training/frame?theme=auto&bg=auto"
+      width="350"
+      height="400"
+      frameborder="0"
+      allowtransparency="true"
+      title="Lichess Daily Puzzle"
+    ></iframe>
+  </section>
+
+  <section id="live-match" class="live-match">
+    <h2>♟️ Live Match – Lichess TV</h2>
+    <div class="live-frame-wrapper">
+      <iframe
+        src="https://lichess.org/tv/frame?theme=auto&bg=auto"
+        width="350"
+        height="400"
+        frameborder="0"
+        allowtransparency="true"
+        title="Lichess TV Live"
+      ></iframe>
+    </div>
+  </section>
+  
+
+<section id="events">
+  <h2>Upcoming Events</h2>
+  <ul class="events">
+    <li><strong>April 13, 2025:</strong> Sunday Blitz Showdown </li>
+    <li><strong>April 20, 2025:</strong> Sundar Rapid Battle</li>
+    <li><strong>May 1, 2025:</strong> Not Titled Thursday</li>
+  </ul>
+</section>
+
+<section id="leaderboard">
+  <h2>Leaderboard</h2>
+  <ul class="leaderboard">
+    <li>1. Carlsen, Magnus – 2837 ELO</li>
+    <li>2. Nakamura, Hikaru – 2804 ELO</li>
+    <li>3. Gukesh D – 2787 ELO</li>
+    <li>4. Erigaisi Arjun – 2782 ELO</li>
+  </ul>
+</section>
+
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="gallery">
+    <img src="img1.jpg" alt="Chess 1" />
+    <img src="img2.jpg" alt="Chess 2" />
+    <img src="img3.jpg" alt="Chess 3" />
+    <img src="img4.jpg" alt="Chess 4" />
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea rows="4" placeholder="Not working for now" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Veer Titans. All rights reserved.</p>
+</footer>
+
+<script>
+  const sections = document.querySelectorAll("section");
+
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+  }
+  
+  // Run once, after page load
+  document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("navLinks").classList.remove("active");
+    });
+  });
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+    }
+  });
+}, {
+  threshold: 0.15
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 10) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  });
+  
+</script>
+
+</body>
+</html>
