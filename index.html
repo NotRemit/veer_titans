@@ -11,23 +11,30 @@
 </head>
 <body>
 
-<header>
-  <h1>♟ VSSUT Chess Club ♟</h1>
-  <p>Where strategy meets intellect</p>
-</header>
-
-<nav>
-    <div class="nav-container">
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <div class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#events">Events</a>
-        <a href="#leaderboard">Leaderboard</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+  <header>
+    <div class="header-container">
+      <div class="logo-title">
+        <img src="icon.jpg" alt="Club Logo" class="club-logo"/>
+        <div class="site-title">
+          <h1>♟ VSSUT Chess Club ♟</h1>
+          <p>Where strategy meets intellect</p>
+        </div>
       </div>
+      <nav>
+        <div class="nav-container">
+          <div class="hamburger" onclick="toggleMenu()">☰</div>
+          <div class="nav-links" id="navLinks">
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#leaderboard">Leaderboard</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </header>
+  
   
 
 <section id="about" class="about-section">
@@ -121,17 +128,17 @@
 <script>
   const sections = document.querySelectorAll("section");
 
-function toggleMenu() {
-    const nav = document.getElementById("navLinks");
-    nav.classList.toggle("active");
-  }
-  
-  // Run once, after page load
-  document.querySelectorAll("#navLinks a").forEach(link => {
-    link.addEventListener("click", () => {
-      document.getElementById("navLinks").classList.remove("active");
-    });
+  function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.classList.toggle("active");
+}
+
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navLinks").classList.remove("active");
   });
+});
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -146,14 +153,14 @@ sections.forEach(section => {
   observer.observe(section);
 });
 
-window.addEventListener("scroll", () => {
-    const nav = document.querySelector("nav");
-    if (window.scrollY > 10) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
-    }
-  });
+// window.addEventListener("scroll", () => {
+//     const nav = document.querySelector("nav");
+//     if (window.scrollY > 10) {
+//       nav.classList.add("scrolled");
+//     } else {
+//       nav.classList.remove("scrolled");
+//     }
+//   });
   
 </script>
 
